@@ -1,13 +1,15 @@
 import { useState } from 'react'
 
 
-function App() {
+const App = () => {
 
   return (
     <>
-
+      <div className='text-black'>
+        hello
+      </div>
     </>
   )
-}
+};
 
 export default App
