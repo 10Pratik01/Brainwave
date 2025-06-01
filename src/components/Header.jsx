@@ -3,7 +3,7 @@ import {navigation} from '../constants'
 import { useLocation } from "react-router-dom"
 import Button from "./Button"
 import Menusvg from "../assets/svg/MenuSvg"
-import {HambugerMenu} from './design/Header'
+import {HamburgerMenu} from './design/Header'
 import { useState } from "react"
 
 const Header = () => {
@@ -42,7 +42,7 @@ const Header = () => {
                             {item.title}
                         </a>
                     ))}
-                    <HambugerMenu/>
+                    <HamburgerMenu/>
                 </div>
             </nav>
             <a href="#signup" className="button hidden mr-8 text-white/50 transition-colors hover:text-white lg:block">New Account</a>
