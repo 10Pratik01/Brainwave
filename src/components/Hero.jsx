@@ -1,6 +1,7 @@
 import Section from "./Section";
 import curve from "../assets/hero/curve.png";
 import Button from "./Button";
+import robot from "../assets/hero/robot.jpg"
 const Hero = () => {
   return (
    
@@ -30,7 +31,11 @@ const Hero = () => {
           <div className="relative max-w-[23rem] mx-auto md:max-w-5xl xl:mb-24">
             {/* getting bg-conic-gradient from index.css */}
             <div className="relative z-1 p-0.5 rounded-2xl bg-conic-gradient"> 
-                
+                <div className="relative bg-zinc-900 rounded-[1rem] ">
+                    <div  className="h-[1.4rem] bg-zinc-700 rounded-t-[0.9rem] "/>
+                    <img src={robot} alt="hero" width={1440}
+                    height={1800} />
+                </div>
 
             </div>
           </div>
