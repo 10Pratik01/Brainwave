@@ -3,7 +3,7 @@ import curve from "../assets/hero/curve.png";
 
 const Hero = () => {
   return (
-    <div>
+   
       <Section
         className="pt-[12rem] -mt-[5.25]"
         crosses
@@ -16,13 +16,16 @@ const Hero = () => {
             <h1 className="font-semibold text-[2.5rem] leading-[3.25rem] md:text-[2.75rem] md:leading-[3.75rem] lg:text-[3.25rem] lg:leading-[4.0625rem] xl:text-[3.75rem] xl:leading-[4.5rem] mb-6">
               Explore the Possibilites of AI chatiing with{" "}
               <span className="inline-block relative">
-                Brainwave <img src={curve} alt="" />
+                Brainwave <img src={curve} alt="" className="absolute top-full left-0 w-full xl:-mt-2 " width={624}
+                height={28} />
               </span>
             </h1>
+            <p className="text-zinc-500 max-w-3xl mx-auto mb-6 lg:mb-8  ">
+                Unleash the power of AI within Brainwave. Upgrade your productivity with Brainwave, the open AI chat app. 
+            </p>
           </div>
         </div>
       </Section>
-    </div>
   );
 };
 
