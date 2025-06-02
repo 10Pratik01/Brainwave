@@ -5,7 +5,7 @@ const Section = ({
     className,
     id,
     crosses,
-    corssesOffset,
+    crossesOffset,
     customPaddings,
     childeren 
 }) => {
@@ -20,9 +20,9 @@ const Section = ({
             {crosses && (
                 <>
                     <div className={`
-                            hidden absolute top-0 left-7.5 right-7.5 h-0.25 bg-gray-900 ${corssesOffset && corssesOffset} pointer-events-none lg:block xl:left-10 xl:right-10
+                            hidden absolute top-0 left-7.5 right-7.5 h-0.25 bg-gray-900 ${crossesOffset && crossesOffset} pointer-events-none lg:block xl:left-10 xl:right-10
                         `} />
-                        <SectionSvg corssesOffset={corssesOffset}/>
+                        <SectionSvg crossesOffset={crossesOffset}/>
                 </>
             )}
         </div>
