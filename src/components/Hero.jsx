@@ -2,6 +2,7 @@ import Section from "./Section";
 import curve from "../assets/hero/curve.png";
 import Button from "./Button";
 import robot from "../assets/hero/robot.jpg"
+import heroBackground  from "../assets/hero/hero-background.jpg";
 const Hero = () => {
   return (
    
@@ -33,10 +34,21 @@ const Hero = () => {
             <div className="relative z-1 p-0.5 rounded-2xl bg-conic-gradient"> 
                 <div className="relative bg-zinc-900 rounded-[1rem] ">
                     <div  className="h-[1.4rem] bg-zinc-700 rounded-t-[0.9rem] "/>
-                    <img src={robot} alt="hero" width={1440}
-                    height={1800} />
+                    <div className="aspect-[33/40] rounded-b-[0.9rem] overflow-hidden md:aspect-[688/490] lg:aaspect-[1024/490]">
+                        <img
+                         src={robot} 
+                          className="w-full "
+                          width={1024}
+                          height={490}
+                        />
+                    </div>
                 </div>
-
+            </div>
+            <div className="absolute -top-[53%] left-1/2 w-[236%] -translate-x-1/2 md:-top-[46%] md:2-[138%] lg:top-[104%] ">
+              <img src={heroBackground} alt="hero"
+                  width={1440}
+                  height={1800}  
+                  className="w-full"/>
             </div>
           </div>
         </div>
