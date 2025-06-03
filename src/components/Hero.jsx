@@ -3,6 +3,11 @@ import curve from "../assets/hero/curve.png";
 import Button from "./Button";
 import robot from "../assets/hero/robot.jpg";
 import heroBackground from "../assets/hero/hero-background.jpg";
+
+import {BackgroundCircles, BottomLine, Gradient} from "./design/Hero"
+import { heroIcons  } from "../constants";
+import { ScrollParallax } from "react-just-parallax";
+
 const Hero = () => {
   return (
     <Section
