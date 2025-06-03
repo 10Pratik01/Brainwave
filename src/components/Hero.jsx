@@ -7,8 +7,12 @@ import heroBackground from "../assets/hero/hero-background.jpg";
 import {BackgroundCircles, BottomLine, Gradient} from "./design/Hero"
 import { heroIcons  } from "../constants";
 import { ScrollParallax } from "react-just-parallax";
+import { useRef } from "react";
 
 const Hero = () => {
+
+  const parallaxRef = useRef(null); 
+
   return (
     <Section
       className="pt-[12rem] -mt-[5.25rem]"
@@ -17,7 +21,7 @@ const Hero = () => {
       customPaddings
       id="hero"
     >
-      <div className="max-w-[77.5rem] mx-auto px-5 md:px-10 lg:px-15 xl:max-w-[87.5rem] relative">
+      <div className="max-w-[77.5rem] mx-auto px-5 md:px-10 lg:px-15 xl:max-w-[87.5rem] relative" ref={parallaxRef}>
         <div className="relative z-1 max-w-[62rem] mx-auto text-center mb-[4rem] md:mb-20 lg:mb-[6rem]">
           <h1 className="font-semibold text-[2.5rem] leading-[3.25rem] md:text-[2.75rem] md:leading-[3.75rem] lg:text-[3.25rem] lg:leading-[4.0625rem] xl:text-[3.75rem] xl:leading-[4.5rem] mb-6">
             Explore the Possibilites of AI chatiing with{" "}
@@ -53,6 +57,9 @@ const Hero = () => {
                   height={490}
                   alt="AI"
                 />
+                <ScrollParallax isAbsolutelyPositioned>
+
+                </ScrollParallax>
               </div>
             </div>
           </div>
