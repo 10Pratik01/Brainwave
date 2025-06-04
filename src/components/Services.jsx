@@ -1,7 +1,7 @@
 import Section from "./Section"
 import Heading from "./Heading"
 import { brainwave, check, service1, service2, service3 } from "../assets"
-import { brainwaveServices } from "../constants"
+import { brainwaveServices, brainwaveServicesIcons } from "../constants"
 import Generating from "./Generating"
 import {PhotoChatMessage, Gradient, VideoBar, VideoChatMessage} from "./design/Services"
 const Services = () => {
@@ -18,7 +18,7 @@ const Services = () => {
                         src={service1} 
                         alt="Smartest AI " />
                     </div>
-                    <div className="relative z1 max-w-[17rem] ml-auto mb-10 md:mb-5 lg:mb-0">
+                    <div className="relative z-1 max-w-[17rem] ml-auto mb-10 md:mb-5 lg:mb-0">
                         <h4 className=" text-[2rem] leading-normal mb-4  " >Smartest AI </h4>
                         <p className="font-light text-[0.875rem] leading-6 md:text-base mb-[3rem] text-gray-300">Brainwave unlocks the potential of AI-powered application</p>
                         <ul className="font-light text-[0.875rem] leading-6 md:text-base">
@@ -52,12 +52,29 @@ const Services = () => {
                            <PhotoChatMessage />
                     </div>
 
-                    <div className="p-4 bg-zinc-900 rounded-3xl overflow-hidden lg:min-h-[46rem] ">
-                            <div className="py-12 px-4 xl:px-8 ">
+                    <div className="p-4 bg-zinc-900/80 rounded-3xl overflow-hidden lg:min-h-[46rem] ">
+                        <div className="py-12 px-4 xl:px-8 ">
+                            <h4 className="text-[2rem] leading-normal mb-4">Video generation</h4>
+                            <p className="font-light text-[0.875rem] leading-6 md:text-base mb-[2rem] text-gray-300">The world&apos;s most powerful AI photo and video art generation engin. What will you create?</p>
+                            <ul className="flex items-center justify-between">
+                                {brainwaveServicesIcons.map((item, index)=>(
+                                    <li key={index} className={`hover:scale-110 ease-in-out duration-75 transition-all rounded-2xl flex items-center justify-center ${index ===2 ? "w-[3.5rem] h-[3.5rem] p-0.25 bg-conic-gradient md:w-[4.5rem]  " : "flex w-10 h-10 bg-zinc-800 md:w-15 md:h-15"}`}>
+                                        <div className={`${index === 2 ? "flex items-center justify-center w-full h-full bg-zinc-900 rounded-[1rem]" : ""}`}>
+                                            <img src={item} alt={item} width={24} height={24} className=""/>
+                                        </div>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
 
-                            </div>
+                        <div className="relative h-[20rem] rounded-xl overflow-hidden bg-zinc-950 md:h-[25rem] ">
+                            <img src={service3} className="w-full h-full object-cover" width={520} height={400} alt="Robot2" />
+                            <VideoChatMessage />
+                            <VideoBar />
+                        </div>
                     </div>
                 </div>
+                <Gradient/>
             </div>
         </div>
     </Section>
