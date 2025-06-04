@@ -18,6 +18,7 @@ import curve from "../assets/hero/curve.png";
 import robot from "../assets/hero/robot.jpg";
 import heroBackground from "../assets/hero/hero-background.jpg";
 import Notification from "./Notification";
+import CompanyLogos from "./CompanyLogos";
 
 
 const Hero = () => {
@@ -101,6 +102,7 @@ const Hero = () => {
           </div>
           <BackgroundCircles/>
         </div>
+        <CompanyLogos className="hidden relative z-10 mt-20 lg:block "/>
       </div>
       <BottomLine/>
     </Section>
