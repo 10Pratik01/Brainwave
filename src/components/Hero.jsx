@@ -1,13 +1,23 @@
+// Hooks, etc
+import { ScrollParallax } from "react-just-parallax";
+import { useRef } from "react";
+
+// Files
 import Section from "./Section";
-import curve from "../assets/hero/curve.png";
+import Generating from "./Generating"
 import Button from "./Button";
+
+// Constants
+import { heroIcons  } from "../constants";
+
+// Designs
+import {BackgroundCircles, BottomLine, Gradient} from "./design/Hero"
+
+// Images
+import curve from "../assets/hero/curve.png";
 import robot from "../assets/hero/robot.jpg";
 import heroBackground from "../assets/hero/hero-background.jpg";
 
-import {BackgroundCircles, BottomLine, Gradient} from "./design/Hero"
-import { heroIcons  } from "../constants";
-import { ScrollParallax } from "react-just-parallax";
-import { useRef } from "react";
 
 const Hero = () => {
 
@@ -57,6 +67,8 @@ const Hero = () => {
                   height={490}
                   alt="AI"
                 />
+                <Generating className="absolute left-4 right-4 bottom-5 md:left-1/2 md:right-auto md:bottom-8 md:w-[31rem] md:-translate-x-1/2 " />
+
                 <ScrollParallax isAbsolutelyPositioned>
                   <ul className="hidden absolute -left-[5.5rem] bottom-[7.5rem] px-1 py-1 bg-zinc-700/20 backdrop-blur-2xl border border-zinc-700/10 rounded-2xl xl:flex"> 
                     {heroIcons.map((icon, index) => (
