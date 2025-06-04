@@ -9,7 +9,7 @@ import { benefits } from "../constants";
 
 const Benefits = () => {
   return (
-    <Section id="features">
+    <Section id="features" crosses>
       <div className="max-w-[77.5rem] mx-auto px-5 md:px-10 lg:px-15 xl:max-w-[87.5rem] relative z-2">
         <Heading
           className="md:max-w-md lg:max-w-2xl"
