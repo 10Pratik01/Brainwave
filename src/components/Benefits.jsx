@@ -16,12 +16,12 @@ gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(useGSAP);
 
 const Benefits = () => {
-  const containerRef = useRef(null); 
-
+  
   useGSAP(() => {
     animation_heading('#benifit_heading', { y:0, opacity:1,});
   }, [])
-
+  
+  const containerRef = useRef(null); 
    useEffect(() => {
     const ctx = gsap.context(() => {
       const items = gsap.utils.toArray(".benefit-item");

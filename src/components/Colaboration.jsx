@@ -5,7 +5,12 @@ import { brainwaveSymbol, check } from "../assets"
 import {LeftCurve, RightCurve} from "./design/Collaboration"
 import { animation_heading } from "../../utils/animation"
 import { useGSAP } from "@gsap/react"
+import { gsap } from "gsap";
+import { useEffect, useRef } from "react"
 
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(useGSAP,ScrollTrigger);
 
 
 const Colaboration = () => {
@@ -15,7 +20,31 @@ const Colaboration = () => {
             opacity:1,
         })
     },[])
+    const containerRef = useRef(null); 
+   useEffect(() => {
+    const ctx = gsap.context(() => {
+      const items = gsap.utils.toArray(".benefit-item");
 
+      items.forEach((item, index) => {
+        gsap.from(item, {
+          opacity: 0,
+          x: 50,
+          duration: 1,
+          ease: "power3.out",
+          delay: index * 0.15,
+          scrollTrigger: {
+            trigger: item,
+            start: "top 85%",
+            toggleActions: "play none none none",
+          },
+        });
+      });
+
+      ScrollTrigger.refresh(); // ensure layout is correct
+    }, containerRef);
+
+    return () => ctx.revert(); // cleanup on unmount
+  }, []);
   return (
 
     <Section crosses>
@@ -24,9 +53,9 @@ const Colaboration = () => {
                 <h2 id="colaboration_heading" className="opacity:0 translate-y-20 text-[1.75rem] leading-[2.5rem] md:text-[2rem] md:leading-[2.5rem] lg:text-[2.5rem] lg:leading-[3.5rem] xl:text-[3rem] xl:leading-tight mb-4 md:mb-8">AI Chat App for seamless
                 </h2>
 
-                <ul className="max-w-[22rem] mb-10 md:mb-14">
+                <ul ref={containerRef}  className="max-w-[22rem] mb-10 md:mb-14">
                     {collabContent.map((item)=>(
-                        <li key={item.id} className="mb-3 py-3 ">
+                        <li key={item.id} className="mb-3 py-3 benefit-item">
                             
                             <div className="flex items-center ">
                                 <img src={check} width={24} height={24} alt="check" className="" />
