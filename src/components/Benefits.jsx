@@ -7,13 +7,25 @@ import ClipPath from "../assets/svg/ClipPath";
 
 import { benefits } from "../constants";
 
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/all"
+import { animation_heading } from '../../utils/animation';
+gsap.registerPlugin(ScrollTrigger); 
+gsap.registerPlugin(useGSAP);
+
 const Benefits = () => {
+  useGSAP(() => {
+    animation_heading('#benifit_heading', { y:0, opacity:1,});
+  }, [])
   return (
     <Section id="features" crosses>
       <div className="max-w-[77.5rem] mx-auto px-5 md:px-10 lg:px-15 xl:max-w-[87.5rem] relative z-2">
         <Heading
           className="md:max-w-md lg:max-w-2xl"
           title="Chat Smarter, Not Harder with Brainwave"
+          id="benifit_heading"
+          heading_className= " opacity-0 translate-y-20"
         />
         <div className="flex flex-wrap gap-10 mb-10">
           {benefits.map((item) => (
