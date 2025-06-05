@@ -28,24 +28,35 @@ const Colaboration = () => {
                     </Button>
             </div>
             <div className="lg:ml-auto xl:w-[38rem] mt-4">
-                    <p className="font-light text-[0.875rem] leading-6 md:text-base mb-88 text-gray-400 md:mb-16 lg:mb-32 lg:w-[22rem] lg:mx-auto"> {collabText}</p>
+                    <p className="font-light text-[0.875rem] leading-6 md:text-base mb-8 text-gray-400 md:mb-16 lg:mb-32 lg:w-[22rem] lg:mx-auto"> {collabText}</p>
                     <div className="relative left-1/2 flex w-[22rem] aspect-square border border-zinc-900 rounded-full -translate-x-1/2 scale-75 md:scale-100 ">
                         <div className="flex w-60 aspect-square m-auto border border-zinc-900 rounded-full ">
-                            <div className="w-[6rem] aspect-square m-auto p-[0.2rem] bg-conic-gradient rounded-full -translate-y-7 lg:-translate-y-7">
+                            <div className="w-[6rem] aspect-square m-auto p-[0.2rem] bg-conic-gradient rounded-full ">
                                 <div className="flex items-center justify-center w-full h-full bg-zinc-950 rounded-full">
                                     <img src={brainwaveSymbol}
-                                    width={48} height={48} alt="" />
+                                    width={48} height={48} alt="brainwave" />
                                 </div>
                             </div>
                         </div>
                         <ul>
-                            {collabApps.map((app,index) =>(
-                                <li key={app.id} className={`absolute top-0 left-1/2 h-1/2 -m-[1.6rem] origin-bottom rotate-${index * 45 } `}>
-                                    
-
-                                    <div className={`relative -top-[1.6rem] flex w-[3.2rem] h-[3.2rem] bg-zinc-900 border border-white/15 rounded-xl -rotate-${index * 45}`}>
-                                       <img src={app.icon} alt={app.icon} className="m-auto" width={app.width} height={app.height}/>
-                                    </div>
+                            {collabApps.map((app, index) => (
+                                <li
+                                key={app.id}
+                                className="absolute top-1/2 left-1/2 w-[3.2rem] h-[3.2rem] -translate-y-7 -translate-x-7"
+                                style={{
+                                    transform: `rotate(${index * (360 / collabApps.length)}deg) translateY(-11rem) rotate(-${index * (360 / collabApps.length)}deg)`,
+                                    transformOrigin: "center",
+                                }}
+                                >
+                                <div className="flex items-center justify-center w-full h-full bg-zinc-900 border border-white/15 rounded-xl">
+                                    <img
+                                    src={app.icon}
+                                    alt={app.title}
+                                    className="m-auto"
+                                    width={app.width}
+                                    height={app.height}
+                                    />
+                                </div>
                                 </li>
                             ))}
                         </ul>
