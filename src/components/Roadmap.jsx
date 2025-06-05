@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import Section from './Section';
 import Heading from './Heading';
 import { roadmap } from '../constants';
@@ -6,21 +6,49 @@ import { check2, grid, loading1 } from '../assets';
 import Tagline from './Tagline';
 import Button from './Button';
 import { Gradient } from './design/Roadmap';
+import gsap from 'gsap';
+import { ScrollTrigger } from "gsap/all"
+
+gsap.registerPlugin(ScrollTrigger); 
+
 
 const Roadmap = () => {
+  const roadmapContainer = useRef(null)
+  useEffect(()=>{
+    const ctx = gsap.context(()=>{
+      const items = gsap.utils.toArray(".roadmap-items"); 
+    items.forEach((item, index) =>{
+      gsap.from(item, {
+        opacity:0, 
+        y:50, 
+        duration:1, 
+        ease:"power3.out", 
+        delay: index * 0.2,
+        scrollTrigger: {
+          trigger:item, 
+          start: "top 80%",
+          toggleActions: "play none none none", 
+        }, 
+      });
+    });
+    ScrollTrigger.refresh(); 
+    }, roadmapContainer)
+     return () => ctx.revert();
+  },[])
+
   return (
     <Section className="overflow-hidden" id="roadmap">
       <div className="max-w-[77.5rem] mx-auto px-5 md:px-10 lg:px-15 xl:max-w-[87.5rem] md:pb-10">
         <Heading tag="Ready to get started" title="What we&apos;re working on" />
 
-        <div className="relative grid gap-6 md:grid-cols-2 md:gap-4 md:pb-[7rem]">
+        <div ref={roadmapContainer}  className="relative grid gap-6 md:grid-cols-2 md:gap-4 md:pb-[7rem]">
           {roadmap.map((item) => {
             const status = item.status === 'done' ? 'Done' : 'In Progress';
 
             return (
               <div
                 key={item.id}
-                className={`md:flex even:md:translate-y-[7rem] p-0.25 rounded-[2.5rem] ${
+                className={`roadmap-items md:flex even:md:translate-y-[7rem] p-0.25 rounded-[2.5rem] ${
                   item.colorful ? 'bg-conic-gradient' : 'bg-gray-800'
                 }`}
               >
