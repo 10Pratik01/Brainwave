@@ -3,12 +3,25 @@ import Button from "./Button"
 import {collabApps, collabContent, collabText} from "../constants"
 import { brainwaveSymbol, check } from "../assets"
 import {LeftCurve, RightCurve} from "./design/Collaboration"
+import { animation_heading } from "../../utils/animation"
+import { useGSAP } from "@gsap/react"
+
+
+
 const Colaboration = () => {
+    useGSAP(()=>{
+        animation_heading("#colaboration_heading", {
+            y:0, 
+            opacity:1,
+        })
+    },[])
+
   return (
+
     <Section crosses>
         <div className="max-w-[77.5rem] mx-auto px-5 md:px-10 lg:px-15 xl:max-w-[87.5rem] lg:flex">
             <div className="max-w-[25rem]" >
-                <h2 className="text-[1.75rem] leading-[2.5rem] md:text-[2rem] md:leading-[2.5rem] lg:text-[2.5rem] lg:leading-[3.5rem] xl:text-[3rem] xl:leading-tight mb-4 md:mb-8">AI Chat App for seamless
+                <h2 id="colaboration_heading" className="opacity:0 translate-y-20 text-[1.75rem] leading-[2.5rem] md:text-[2rem] md:leading-[2.5rem] lg:text-[2.5rem] lg:leading-[3.5rem] xl:text-[3rem] xl:leading-tight mb-4 md:mb-8">AI Chat App for seamless
                 </h2>
 
                 <ul className="max-w-[22rem] mb-10 md:mb-14">
@@ -27,6 +40,7 @@ const Colaboration = () => {
                         Try it Now
                     </Button>
             </div>
+            
             <div className="lg:ml-auto xl:w-[38rem] mt-4">
                     <p className="font-light text-[0.875rem] leading-6 md:text-base mb-8 text-gray-400 md:mb-16 lg:mb-32 lg:w-[22rem] lg:mx-auto"> {collabText}</p>
                     <div className="relative left-1/2 flex w-[22rem] aspect-square border border-zinc-900 rounded-full -translate-x-1/2 scale-75 md:scale-100 ">
