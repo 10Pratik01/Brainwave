@@ -11,13 +11,43 @@ import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all"
 import { animation_heading } from '../../utils/animation';
+import { useEffect, useRef } from 'react';
 gsap.registerPlugin(ScrollTrigger); 
 gsap.registerPlugin(useGSAP);
 
 const Benefits = () => {
+  const containerRef = useRef(null); 
+
   useGSAP(() => {
     animation_heading('#benifit_heading', { y:0, opacity:1,});
   }, [])
+
+   useEffect(() => {
+    const ctx = gsap.context(() => {
+      const items = gsap.utils.toArray(".benefit-item");
+
+      items.forEach((item, index) => {
+        gsap.from(item, {
+          opacity: 0,
+          y: 50,
+          duration: 1,
+          ease: "power3.out",
+          delay: index * 0.15,
+          scrollTrigger: {
+            trigger: item,
+            start: "top 85%",
+            toggleActions: "play none none none",
+          },
+        });
+      });
+
+      ScrollTrigger.refresh(); // ensure layout is correct
+    }, containerRef);
+
+    return () => ctx.revert(); // cleanup on unmount
+  }, []);
+
+
   return (
     <Section id="features" crosses>
       <div className="max-w-[77.5rem] mx-auto px-5 md:px-10 lg:px-15 xl:max-w-[87.5rem] relative z-2">
@@ -27,11 +57,11 @@ const Benefits = () => {
           id="benifit_heading"
           heading_className= " opacity-0 translate-y-20"
         />
-        <div className="flex flex-wrap gap-10 mb-10">
+        <div ref={containerRef} className="flex flex-wrap gap-10 mb-10">
           {benefits.map((item) => (
             <div
               key={item.id}
-              className="block relative p-0.5 bg-no-repeat bg-[length:100%_100%] md:max-w-[24rem]"
+              className="benefit-item block relative p-0.5 bg-no-repeat bg-[length:100%_100%] md:max-w-[24rem]"
               style={{ backgroundImage: `url(${item.backgroundUrl})` }}
             >
               <div className="relative z-2 flex flex-col min-h-[22rem] p-[2.4rem] pointer-events-none">

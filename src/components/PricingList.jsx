@@ -7,7 +7,7 @@ const PricingList = () => {
   return (
     <div className='flex gap-[1rem] max-lg:flex-wrap'>
         {pricing.map((item, index) => (
-            <div id={item.id} className='hover:scale-101 duration-100 transition-all ease-in-out  w-[19rem] max-lg:w-full h-full px-6 bg-zinc-900 border border-zinc-700 rounded-[2rem] lg:w-auto even:py-14 odd:py-8 odd:my-5
+            <div key={item.id} className='hover:scale-101 duration-100 transition-all ease-in-out  w-[19rem] max-lg:w-full h-full px-6 bg-zinc-900 border border-zinc-700 rounded-[2rem] lg:w-auto even:py-14 odd:py-8 odd:my-5
              
              '>
                 <h4 
