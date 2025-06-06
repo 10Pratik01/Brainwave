@@ -36,6 +36,36 @@ Check out the live version: brainwave-lilac.vercel.app
   <li>📦 <strong>Package Manager:</strong> npm</li>
 </ol>
 
+
+<h2>🖼️ Screenshots</h2>
+
+<p align="center">
+  <h2>Home</h2>
+  <img src="./public/ReadmeImages/hero.png" width="700" alt="Hero">
+  <br><br>
+  <h2>Benifits</h2>
+  <img src="./public/ReadmeImages/InformationSection.png" width="700" alt="Benifits">
+  <br><br>
+  <h2>Collaboration</h2>
+  <img src="./public/ReadmeImages/ChatAppSection.png" width="700" alt="Collaboration">
+  <br><br>
+  <h2>Services</h2>
+  <img src="./public/ReadmeImages/GenerativAISection.png" width="700" alt="Services">
+  <img src="./public/ReadmeImages/GenerativAISection2.png" width="700" alt="Services">
+  <br><br>
+  <h2>Pricing</h2>
+  <img src="./public/ReadmeImages/PricingSection.png" width="700" alt="Pricing">
+  <br><br>
+  <h2>RoadMap</h2>
+  <img src="./public/ReadmeImages/WhatWereWorkingOnSection.png" width="700" alt="Pricing">
+  <img src="./public/ReadmeImages/WhatWereWorkingOnSection2.png" width="700" alt="Pricing">
+  <br>
+  <h2>Footer</h2>
+  <img src="./public/ReadmeImages/FooterSection.png" width="700" alt="chip">
+  <br><br>
+</p>
+
+
 <h2>📁 Project Structure</h2>
 <pre>
 Brainwave/
