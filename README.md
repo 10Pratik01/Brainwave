@@ -5,6 +5,7 @@
 <p align="center">
   <a href="https://brainwave-lilac.vercel.app/" target="_blank">🌐 Live Demo</a> |
   <a href="https://github.com/10Pratik01/Brainwave" target="_blank">📂 Repository</a>
+  
 </p>
 
 <h2>🚀 Features</h2>
